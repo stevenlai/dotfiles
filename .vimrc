@@ -7,8 +7,10 @@ syntax enable
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
@@ -51,6 +53,7 @@ Bundle 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 
+call vundle#end()            " required
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
@@ -101,6 +104,5 @@ nmap <leader><space> :call whitespace#strip_trailing()<CR>
 nmap <leader>g :GitGutterToggle<CR>
 nmap <leader>c <Plug>Kwbd
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
 
 colorscheme jellybeans
