@@ -3,3 +3,4 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \[$(tput setaf 4)\]\W\[$(t
 alias ll='ls -lahG'
 alias ls='ls -G'
 alias vi='mvim -v'
+alias tmux='tmux -2'
