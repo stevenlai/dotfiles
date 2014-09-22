@@ -11,4 +11,4 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \[$(tput setaf 4)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 2)\] $(__git_ps1 "(%s)") \n\\$ \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \[$(tput setaf 4)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 2)\]\n\\$ \[$(tput sgr0)\]"
