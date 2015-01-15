@@ -50,6 +50,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'bradfitz/goimports'
 
 call vundle#end()            " required
 
@@ -132,3 +133,4 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 colorscheme jellybeans
+let g:go_fmt_command = "goimports"

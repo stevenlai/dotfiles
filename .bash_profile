@@ -2,6 +2,7 @@ alias ll='ls -lahG'
 alias ls='ls -G'
 alias vi='mvim -v'
 alias tmux='tmux -2'
+alias h='heroku'
 
 # export GIT_PS1_SHOWCOLORHINTS=1
 # export GIT_PS1_SHOWDIRTYSTATE=1
@@ -13,7 +14,12 @@ fi
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \[$(tput setaf 4)\]\[\e[00;37m\]\w\[\e[0m\]\[$(tput setaf 2)\]]\[$(tput setaf 2)\]\n\\$ \[$(tput sgr0)\]"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export GOPATH="$HOME/go"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+source /usr/local/etc/bash_completion.d/todo_completion
+alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d ~/.todo.cfg'
+export PATH="$PATH:$HOME/.rvm/bin"
+source ~/.profile
+
