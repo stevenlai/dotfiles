@@ -1,0 +1,6 @@
+--python-kinds=-i
+--recurse=yes
+--exclude=.git
+--exclude=vendor/*
+--exclude=db/*
+--exclude=log/*
