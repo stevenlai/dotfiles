@@ -1,17 +1,8 @@
 " Set history length of ':' commands
 set history=500
 
-" Enable loading plugin files
-filetype plugin on
-
-" Enable loading ident files
-filetype indent on
-
 " Enable automatically read if file has been edited outside vim
 set autoread
-
-" Set leader key to ','
-let mapleader=","
 
 " Set leader key to ','
 let mapleader=","
@@ -77,6 +68,9 @@ set timeoutlen=500
 " Enable syntax highlighting
 syntax enable
 
+" Enable filetype specific indentation and plugin files
+filetype indent plugin on
+
 " Enable 256 colors
 set t_Co=256
 
@@ -115,18 +109,42 @@ set number
 
 " Enable saving undo history to file
 set undofile
-set undodir=/tmp
-
-" Enable status line and set paste mode in status
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
-
-set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ \ \ Line:\ %l\ \ Column:\ %c
+set undodir=/tmp/undo
 
 " Map paste mode
 map <leader>pp :setlocal paste!<cr>
+
+" Remap ESC in the integrated terminal unless in fzf
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+
+" Map fzf File search to Ctrl F
+noremap <silent> <C-f> :Files<CR>
+
+" Map rg search to ,f
+noremap <silent> <Leader>f :Rg<CR>
+
+
+" Install vim-plug for nvim if not installed
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+end
+
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+colorscheme gruvbox
+
+" Strip whitespace on save through vim-better-whitespace
+let g:strip_whitespace_on_save = 1
+
+let g:go_highlight_function_calls = 1
