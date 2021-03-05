@@ -140,6 +140,8 @@ Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -148,3 +150,5 @@ colorscheme gruvbox
 let g:strip_whitespace_on_save = 1
 
 let g:go_highlight_function_calls = 1
+
+let g:rustfmt_autosave = 1
