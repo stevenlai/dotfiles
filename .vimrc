@@ -150,5 +150,6 @@ colorscheme gruvbox
 let g:strip_whitespace_on_save = 1
 
 let g:go_highlight_function_calls = 1
-
+au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 let g:rustfmt_autosave = 1
+
