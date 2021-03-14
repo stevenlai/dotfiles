@@ -104,6 +104,9 @@ set autoindent
 " Do smart indenting when starting new line
 set smartindent
 
+" Set tab according to shiftwidth
+set smarttab
+
 " Enable line numbers
 set number
 
@@ -151,5 +154,7 @@ let g:strip_whitespace_on_save = 1
 
 let g:go_highlight_function_calls = 1
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
+au FileType go nmap <Leader>s <Plug>(go-def-split)
+
 let g:rustfmt_autosave = 1
 
