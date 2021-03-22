@@ -71,6 +71,7 @@ syntax enable
 " Enable filetype specific indentation and plugin files
 filetype indent plugin on
 
+
 " Enable 256 colors
 set t_Co=256
 
@@ -144,6 +145,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'SirVer/ultisnips'
+
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -155,6 +158,13 @@ let g:strip_whitespace_on_save = 1
 let g:go_highlight_function_calls = 1
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 au FileType go nmap <Leader>s <Plug>(go-def-split)
+au FileType go nmap <Leader>t <Plug>(go-test)
+
 
 let g:rustfmt_autosave = 1
 
+let g:go_fmt_command = "goimports"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
