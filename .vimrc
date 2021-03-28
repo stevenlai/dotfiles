@@ -155,15 +155,24 @@ colorscheme gruvbox
 " Strip whitespace on save through vim-better-whitespace
 let g:strip_whitespace_on_save = 1
 
+" vim-go specifics
+let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>t <Plug>(go-test)
 
-
 let g:rustfmt_autosave = 1
-
-let g:go_fmt_command = "goimports"
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
