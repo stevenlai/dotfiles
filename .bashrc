@@ -129,3 +129,6 @@ fi
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash
+
+source /usr/lib/git-core/git-sh-prompt
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$(__git_ps1)\[\033[00m\] $ "
