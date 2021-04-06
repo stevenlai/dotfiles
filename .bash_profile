@@ -114,7 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 # Custom bash settings
-alias vi='vim'
+alias vi='nvim'
 alias tmux='tmux -2'
 
 alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/ (\1)/'"

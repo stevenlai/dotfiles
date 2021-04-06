@@ -28,7 +28,7 @@ fi
 [ ! -f $HOME/.vimrc ] && ln -s $(pwd)/.vimrc ~/.vimrc
 
 # Set up symlink to nvim init
-[ ! -f $HOME/.config/nvim/init.vim ] && ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
+[ ! -f $HOME/.config/nvim/init.vim ] && mkdir -p ~/.config/nvim/ && ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
 # Set up symlink to tmux.conf
 [ ! -f $HOME/.tmux.conf ] && ln -s $(pwd)/.tmux.conf ~/.tmux.conf
