@@ -117,7 +117,4 @@ fi
 alias vi='nvim'
 alias tmux='tmux -2'
 
-alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/ (\1)/'"
-
-export PS1="\[\033[38;5;10m\]\d \t \[\033[38;5;15m\]| \[\033[38;5;32m\]\u@\H:\w\[\033[38;5;226m\]\$(__git_ps1)\\[\033[38;5;15m\]\n\$ "
-
+source ~/.bashrc
