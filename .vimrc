@@ -127,14 +127,6 @@ noremap <silent> <C-f> :Files<CR>
 " Map rg search to ,f
 noremap <silent> <Leader>f :Rg<CR>
 
-
-" Install vim-plug for nvim if not installed
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-end
-
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'

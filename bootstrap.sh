@@ -21,6 +21,10 @@ if ! dpkg-query -W -f='${Status}' tig | grep "ok installed"; then
 fi
 
 # Vim setup
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Set up undo history directory
 [ ! -f $HOME/tmp/undo ] && mkdir -p $HOME/tmp/undo
 
@@ -35,3 +39,6 @@ fi
 
 # Set up symlink to bashrc
 [ ! -f $HOME/.bashrc ] && ln -s $(pwd)/.bashrc ~/.bashrc
+
+# Set up symlink for bash_profile
+[ ! -f $HOME/.bash_profile ] && ln -s $(pwd)/.bash_profile ~/.bash_profile
