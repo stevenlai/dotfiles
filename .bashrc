@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Custom bash settings
+alias vi='nvim'
+alias tmux='tmux -2'
+
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
     export FZF_DEFAULT_OPTS='-m --height 50% --border'
