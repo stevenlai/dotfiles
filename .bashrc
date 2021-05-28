@@ -119,6 +119,7 @@ fi
 # Custom bash settings
 alias vi='nvim'
 alias tmux='tmux -2'
+alias tf='terraform'
 
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -132,3 +133,10 @@ source /usr/share/doc/fzf/examples/completion.bash
 
 source /usr/lib/git-core/git-sh-prompt
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$(__git_ps1)\[\033[00m\] $ "
+
+export PATH=$PATH:/usr/local/go/bin
+
+complete -C /usr/bin/terraform terraform
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
